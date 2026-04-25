@@ -1,0 +1,12 @@
+agno
+python-dotenv
+openai
+packaging
+fastembed
+chromadb
+fastapi
+uvicorn
+streamlit
+requests
+pydantic
+sqlalchemy
