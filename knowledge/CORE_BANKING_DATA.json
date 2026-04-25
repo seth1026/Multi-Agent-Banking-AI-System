@@ -1,0 +1,218 @@
+{
+  "meta": {
+    "generatedAt": "2025-08-08T11:05:00Z",
+    "currency": "INR",
+    "locale": "en-IN"
+  },
+  "customer": {
+    "id": "CUST0001",
+    "name": "Aarav Sharma",
+    "dob": "1991-04-12",
+    "email": "aarav.sharma@example.com",
+    "phone": "+91-9876543210",
+    "kyc": { "status": "verified", "pan": "ABCDE1234F", "aadhaarMasked": "XXXX-XXXX-1234" },
+    "addresses": [ { "type": "residential", "line1": "703, Lake View Residency", "city": "Bengaluru", "state": "KA", "postalCode": "560103", "country": "IN" } ]
+  },
+  "accounts": [
+    {
+      "id": "ACCT-SAV-001",
+      "name": "Savings Account",
+      "type": "savings",
+      "numberMasked": "XXXXXXXX3456",
+      "currency": "INR",
+      "ifsc": "KRES0000123",
+      "branch": "HSR Layout, Bengaluru",
+      "openedAt": "2018-06-15",
+      "status": "active",
+      "interestRateApr": 3.5,
+      "overdraftEnabled": false,
+      "holders": [
+        { "id": "CUST0001", "name": "Aarav Sharma", "role": "primary", "kycStatus": "verified" },
+        { "id": "CUST0001-J1", "name": "Ananya Sharma", "role": "joint", "relation": "spouse", "kycStatus": "verified" }
+      ],
+      "balance": { "available": "154200.55", "current": "154980.55", "asOf": "2025-08-08T09:30:00Z" }
+    },
+    {
+      "id": "ACCT-CUR-002",
+      "name": "Salary Account",
+      "type": "current",
+      "numberMasked": "XXXXXXXX7890",
+      "currency": "INR",
+      "ifsc": "KRES0000456",
+      "branch": "Koramangala, Bengaluru",
+      "openedAt": "2022-02-01",
+      "status": "active",
+      "overdraftEnabled": true,
+      "overdraftLimit": "50000.00",
+      "holders": [ { "id": "CUST0001", "name": "Aarav Sharma", "role": "primary", "kycStatus": "verified" } ],
+      "balance": { "available": "38500.10", "current": "28500.10", "asOf": "2025-08-08T09:30:00Z" }
+    },
+    {
+      "id": "ACCT-FD-003",
+      "name": "Fixed Deposit",
+      "type": "deposit_fd",
+      "numberMasked": "FD-XXXX5678",
+      "currency": "INR",
+      "principal": "300000.00",
+      "interestRateApr": 7.25,
+      "tenureMonths": 24,
+      "openedAt": "2024-10-01",
+      "maturityDate": "2026-10-01",
+      "payoutFrequency": "quarterly",
+      "autoRenew": true,
+      "status": "active",
+      "holders": [
+        { "id": "CUST0001", "name": "Aarav Sharma", "role": "primary", "kycStatus": "verified" },
+        { "id": "CUST0001-J1", "name": "Ananya Sharma", "role": "joint", "relation": "spouse", "kycStatus": "verified" }
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "CARD-DB-001",
+      "type": "debit",
+      "network": "visa",
+      "last4": "3456",
+      "expiry": { "month": 10, "year": 2028 },
+      "status": "active",
+      "linkedAccountId": "ACCT-SAV-001",
+      "controls": { "internationalEnabled": true, "contactlessEnabled": true },
+      "limits": { "atmDaily": "25000.00", "posDaily": "100000.00" }
+    },
+    {
+      "id": "CARD-CR-002",
+      "type": "credit",
+      "network": "mastercard",
+      "last4": "1122",
+      "expiry": { "month": 5, "year": 2029 },
+      "status": "active",
+      "creditLimit": "200000.00",
+      "availableCredit": "154500.75",
+      "cashLimit": "40000.00",
+      "statementCycle": { "billDate": 3, "dueDate": 23 },
+      "lastStatement": {
+        "period": { "from": "2025-07-04", "to": "2025-08-03" },
+        "previousBalance": "24500.00",
+        "purchases": "18450.25",
+        "fees": "0.00",
+        "interest": "0.00",
+        "payments": "24500.00",
+        "totalDue": "18450.25",
+        "minDue": "1845.03",
+        "dueDate": "2025-08-23"
+      },
+      "rewards": { "program": "EdgeRewards", "points": 8423 }
+    }
+  ],
+  "payees": [
+    { "id": "PAYEE-001", "name": "Rohit Verma", "type": "person", "upi": "rohitv@okaxis", "account": { "name": "R Verma", "numberMasked": "XXXXXX9987", "ifsc": "HDFC0001789" }, "status": "active" },
+    { "id": "PAYEE-002", "name": "BESCOM Electricity", "type": "billpay", "account": { "name": "BESCOM", "numberMasked": null, "ifsc": null }, "billerCode": "BESCOM-560103", "status": "active" }
+  ],
+  "recurringPayments": [
+    { "id": "REC-001", "name": "Netflix", "fromAccountId": null, "fromCardId": "CARD-CR-002", "toPayeeId": null, "amount": "649.00", "currency": "INR", "frequency": "monthly", "dayOfMonth": 10, "nextDate": "2025-09-10", "status": "active", "mandate": { "type": "card_on_file", "reference": "NETFLIX-COF-1122" } },
+    { "id": "REC-002", "name": "SIP - Axis Bluechip Fund", "fromAccountId": "ACCT-SAV-001", "toPayeeId": null, "amount": "5000.00", "currency": "INR", "frequency": "monthly", "dayOfMonth": 5, "nextDate": "2025-09-05", "status": "active", "mandate": { "type": "nach", "reference": "NACH-SIP-AXISBLUE-001" } }
+  ],
+  "loans": [
+    {
+      "id": "LOAN-HOME-001",
+      "type": "home",
+      "lender": "Kreesalis Bank",
+      "accountId": null,
+      "sanctionAmount": "5000000.00",
+      "principal": "5000000.00",
+      "outstandingPrincipal": "4321450.75",
+      "rateApr": 8.1,
+      "rateType": "floating",
+      "termMonths": 240,
+      "originationDate": "2021-05-10",
+      "maturityDate": "2041-05-10",
+      "emiAmount": "41872.00",
+      "nextEmiDate": "2025-08-15",
+      "status": "active",
+      "collateral": { "type": "property", "description": "2BHK, Bengaluru" },
+      "schedule": [
+        { "dueDate": "2025-08-15", "principalComponent": "23125.40", "interestComponent": "18746.60", "feesComponent": "0.00", "totalDue": "41872.00", "status": "due" },
+        { "dueDate": "2025-09-15", "principalComponent": "23210.55", "interestComponent": "18661.45", "feesComponent": "0.00", "totalDue": "41872.00", "status": "upcoming" },
+        { "dueDate": "2025-10-15", "principalComponent": "23295.80", "interestComponent": "18576.20", "feesComponent": "0.00", "totalDue": "41872.00", "status": "upcoming" }
+      ]
+    },
+    {
+      "id": "LOAN-PL-002",
+      "type": "personal",
+      "lender": "Kreesalis Bank",
+      "principal": "300000.00",
+      "outstandingPrincipal": "185230.20",
+      "rateApr": 14.5,
+      "termMonths": 48,
+      "originationDate": "2023-01-05",
+      "maturityDate": "2027-01-05",
+      "emiAmount": "8345.00",
+      "nextEmiDate": "2025-08-12",
+      "status": "active"
+    }
+  ],
+  "investments": [
+    {
+      "id": "INV-MF-001",
+      "type": "mutual_fund",
+      "provider": "Axis MF",
+      "folio": "1234567/89",
+      "holders": [ { "id": "CUST0001", "name": "Aarav Sharma", "role": "primary" } ],
+      "valuation": { "value": "245678.90", "currency": "INR", "asOf": "2025-08-07T17:00:00Z" },
+      "holdings": [ { "id": "HOLD-AXIS-BLUE", "name": "Axis Bluechip Fund - Direct Plan - Growth", "isin": "INF846K01DQ0", "units": 560.45, "avgNav": "360.25", "currentNav": "438.40", "valuation": "245678.90" } ],
+      "transactions": [ { "id": "INV-TXN-0001", "type": "sip", "date": "2025-08-05", "units": 11.44, "nav": "437.25", "amount": "5000.00", "status": "completed" } ]
+    },
+    {
+      "id": "INV-FD-002",
+      "type": "fd",
+      "provider": "Kreesalis Bank",
+      "accountRef": "ACCT-FD-003",
+      "holders": [ { "id": "CUST0001", "name": "Aarav Sharma", "role": "primary" }, { "id": "CUST0001-J1", "name": "Ananya Sharma", "role": "joint", "relation": "spouse" } ],
+      "valuation": { "value": "300000.00", "currency": "INR", "asOf": "2025-08-08T09:30:00Z" }
+    }
+  ],
+  "beneficiaries": [ { "id": "BEN-001", "name": "Ananya Sharma", "type": "nominee", "relationship": "spouse", "sharePercent": 100, "linkedEntity": { "entity": "account", "entityId": "ACCT-SAV-001" } } ],
+  "limits": [ { "id": "LIM-UPI", "channel": "upi", "dailyLimit": "100000.00", "perTxnLimit": "100000.00", "remainingToday": "87500.00", "asOf": "2025-08-08T09:30:00Z" } ],
+  "documents": [ { "id": "DOC-STMT-SAV-2025-07", "type": "statement", "accountId": "ACCT-SAV-001", "period": { "from": "2025-07-01", "to": "2025-07-31" }, "uri": "https://files.example.com/statements/ACCT-SAV-001-2025-07.pdf", "createdAt": "2025-08-01T05:00:00Z" } ],
+  "consents": [ { "id": "CONSENT-AA-001", "provider": "AccountAggregator", "purpose": "Personal finance management", "scopes": ["accounts", "transactions"], "status": "active", "grantedAt": "2025-06-01T10:00:00Z", "expiresAt": "2026-06-01T10:00:00Z" } ],
+  "disputes": [ { "id": "DISP-CR-001", "transactionId": "TXN-2025-0002", "cardId": "CARD-CR-002", "reason": "Goods not received", "status": "in_review", "openedAt": "2025-08-06T15:00:00Z", "updatedAt": "2025-08-07T09:00:00Z" } ],
+  "alerts": [ { "id": "ALERT-001", "type": "low_balance", "accountId": "ACCT-CUR-002", "message": "Your account balance fell below INR 10,000.", "createdAt": "2025-08-08T08:45:00Z", "read": false } ],
+  "creditProfile": {
+    "bureauScores": [ { "bureau": "CIBIL", "score": 782, "riskGrade": "A", "updatedAt": "2025-08-01" }, { "bureau": "Experian", "score": 775, "riskGrade": "A", "updatedAt": "2025-07-25" } ],
+    "enquiries": [ { "date": "2025-07-10", "type": "credit_card", "institution": "Kreesalis Bank", "amount": "200000.00", "result": "approved" } ],
+    "tradelines": [ { "type": "home_loan", "openDate": "2021-05-10", "institution": "Kreesalis Bank", "limitOrSanction": "5000000.00", "currentBalance": "4321450.75", "status": "active" }, { "type": "credit_card", "openDate": "2022-11-01", "institution": "Kreesalis Bank", "limitOrSanction": "200000.00", "currentBalance": "45500.00", "status": "active" } ]
+  },
+  "insurancePolicies": [
+    { "id": "INS-LIFE-001", "type": "life", "insurer": "HDFC Life", "policyNumber": "HL-PL-2020-123456", "holders": [ { "id": "CUST0001", "name": "Aarav Sharma", "role": "primary" } ], "sumAssured": "10000000.00", "premium": "18000.00", "frequency": "yearly", "startDate": "2020-06-01", "endDate": "2040-06-01", "status": "active", "riders": [ { "name": "Accidental Death", "sumAssured": "2000000.00" } ], "nominees": [ { "name": "Ananya Sharma", "relation": "spouse", "sharePercent": 100 } ] },
+    { "id": "INS-HEALTH-001", "type": "health", "insurer": "Star Health", "policyNumber": "SH-HF-2022-987654", "holders": [ { "id": "CUST0001", "name": "Aarav Sharma", "role": "primary" }, { "id": "CUST0001-J1", "name": "Ananya Sharma", "role": "adult" } ], "sumInsured": "1000000.00", "premium": "22000.00", "frequency": "yearly", "startDate": "2024-12-01", "endDate": "2025-11-30", "status": "active" },
+    { "id": "INS-MOTOR-001", "type": "motor", "insurer": "ICICI Lombard", "policyNumber": "IL-MC-2025-456789", "holders": [ { "id": "CUST0001", "name": "Aarav Sharma", "role": "owner" } ], "vehicle": { "type": "car", "registration": "KA01AB1234", "make": "Hyundai", "model": "Creta", "year": 2021 }, "idv": "800000.00", "premium": "14500.00", "frequency": "yearly", "startDate": "2025-04-10", "endDate": "2026-04-09", "status": "active" }
+  ],
+  "tax": {
+    "form26AS": {
+      "assessmentYear": "2025-26",
+      "pan": "ABCDE1234F",
+      "parts": {
+        "partA": { "tdsSalary": "350000.00", "tdsOther": "4500.00" },
+        "partB": { "tcs": "0.00" },
+        "partC": { "advanceTax": "0.00", "selfAssessmentTax": "0.00" },
+        "partE": { "sft": [ { "type": "MF_PURCHASE", "amount": "60000.00" } ] }
+      },
+      "grossTotalIncomeEstimate": "1850000.00",
+      "taxPaidTotal": "354500.00",
+      "updatedAt": "2025-08-01"
+    }
+  },
+  "rewards": {
+    "programs": [ { "id": "REW-EDGE", "name": "EdgeRewards", "ownerType": "card", "ownerId": "CARD-CR-002", "currency": "points", "pointsBalance": 8423 } ],
+    "ledger": [ { "id": "REW-L-0001", "programId": "REW-EDGE", "date": "2025-08-06", "type": "accrual", "points": 200, "reason": "Purchase at Amazon", "transactionId": "TXN-2025-0002" }, { "id": "REW-L-0002", "programId": "REW-EDGE", "date": "2025-08-01", "type": "redemption", "points": -1500, "reason": "Voucher - Amazon", "reference": "VCHR-AMZ-1500" } ]
+  },
+  "travelNotices": [ { "id": "TRAVEL-001", "cardId": "CARD-CR-002", "country": "SG", "from": "2025-09-12", "to": "2025-09-20", "status": "active" } ],
+  "summary": {
+    "balances": { "totalAvailable": "192700.65", "byAccountId": { "ACCT-SAV-001": "154200.55", "ACCT-CUR-002": "38500.10" } },
+    "cashflow": { "last30d": { "inflow": "227845.15", "outflow": "22559.30" }, "last90d": { "inflow": "494945.45", "outflow": "98052.85" } },
+    "upcoming": { "emi": [ { "loanId": "LOAN-HOME-001", "dueDate": "2025-08-15", "amount": "41872.00", "currency": "INR" }, { "loanId": "LOAN-PL-002", "dueDate": "2025-08-12", "amount": "8345.00", "currency": "INR" } ], "recurringPayments": [ { "recurringId": "REC-002", "nextDate": "2025-09-05", "amount": "5000.00", "currency": "INR" }, { "recurringId": "REC-001", "nextDate": "2025-09-10", "amount": "649.00", "currency": "INR" } ] },
+    "points": { "totalPoints": 8423, "byProgram": { "REW-EDGE": 8423 } },
+    "insuranceCoverage": { "lifeSumAssured": "10000000.00", "healthSumInsured": "1000000.00", "motorIdv": "800000.00" },
+    "netWorth": { "assets": { "deposits": "192700.65", "investments": "545678.90" }, "liabilities": { "loansOutstanding": "4506680.95" }, "net": "-3768301.40" }
+  }
+} 
